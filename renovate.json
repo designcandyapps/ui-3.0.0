@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "github>nuxt/renovate-config-nuxt"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "ignoreDeps": [
+    "valibot30",
+    "valibot31",
+    "typescript",
+    "vaul-vue",
+    "vue-tsc"
+  ],
+  "baseBranches": ["v2", "v3"],
+  "packageRules": [{
+    "matchBaseBranches": ["v3"],
+    "labels": ["v3"]
+  }, {
+    "groupName": "tailwindcss",
+    "matchPackageNames": [
+      "tailwindcss",
+      "@tailwindcss/postcss",
+      "@tailwindcss/vite"
+    ]
+  }, {
+    "matchDepTypes": ["resolutions"],
+    "enabled": false
+  }],
+  "postUpdateOptions": ["pnpmDedupe"]
+}
